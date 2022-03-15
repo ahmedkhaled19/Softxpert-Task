@@ -40,7 +40,7 @@ dependencies {
     implementation(Androidx.APP_COMPAT)
     implementation(Material.MATERIAL)
 
-    // architecture
+    //architecture
     implementation(Androidx.VIEW_MODEL)
     implementation(Androidx.LIVEDATA)
     implementation(Androidx.RUNTIME)
@@ -58,12 +58,12 @@ dependencies {
     implementation(Hilt.HILT_VIEW_MODEL)
     kapt(Hilt.HILT_KPT)
 
-    //Room
-    implementation(Room.ROOM_RUNTIME)
-    implementation(Room.ROOM_KTX)
-    kapt(Room.ROOM_KPT)
-
     //Coroutines
     implementation(Coroutines.COROUTINES_ANDROID)
+
+    //Unit Test
+    testImplementation(Testing.JUNIT_TEST)
+    testImplementation(Testing.GOOGLE_TRUTH)
+    testImplementation(Testing.OKHTTP_MOCK_WEB_SERVER)
 
 }

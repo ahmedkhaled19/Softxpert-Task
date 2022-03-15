@@ -60,6 +60,7 @@ object Versions {
     const val COROUTINES_TEST_VERSION = "1.5.1"
     const val GOOGLE_TRUTH_VERSION = "1.1.3"
     const val HILT_TEST_VERSION = "2.38.1"
+    const val OKHTTP_MOCK_SERVER = "4.9.1"
 }
 
 object AppConfig {
@@ -159,4 +160,6 @@ object Testing {
         "com.google.dagger:hilt-android-testing:${Versions.HILT_TEST_VERSION}"
     const val HILT_TEST_COMPILER =
         "com.google.dagger:hilt-android-compiler:${Versions.HILT_TEST_VERSION}"
+    const val OKHTTP_MOCK_WEB_SERVER =
+        "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_MOCK_SERVER}"
 }

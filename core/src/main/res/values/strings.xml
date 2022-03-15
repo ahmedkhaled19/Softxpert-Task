@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auth_error">you need to login again</string>
+    <string name="something_went_wrong">something went wrong…</string>
+    <string name="check_connection">please check your connection</string>
+    <string name="time_out">time out… please try again</string>
+    <string name="retry">Retry</string>
+</resources>

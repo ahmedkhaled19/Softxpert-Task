@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CleanArchTemplate.iml" filepath="$PROJECT_DIR$/.idea/modules/CleanArchTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CleanArchTemplate.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CleanArchTemplate.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CleanArchTemplate.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/CleanArchTemplate.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/CleanArchTemplate.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/CleanArchTemplate.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/CleanArchTemplate.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/CleanArchTemplate.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/CleanArchTemplate.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/CleanArchTemplate.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/CleanArchTemplate.entities.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/CleanArchTemplate.entities.iml" />
+    </modules>
+  </component>
+</project>

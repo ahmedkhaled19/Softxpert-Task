@@ -17,6 +17,9 @@ open class BaseViewModel @Inject constructor() : ViewModel() {
         SingleLiveEvent<Boolean>()
     }
 
+    val showLoadingMoreProgressBar: SingleLiveEvent<Boolean> by lazy {
+        SingleLiveEvent<Boolean>()
+    }
     val showMessage: SingleLiveEvent<MessageWrapper> by lazy {
         SingleLiveEvent<MessageWrapper>()
     }

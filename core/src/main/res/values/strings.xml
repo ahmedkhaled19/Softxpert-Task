@@ -5,4 +5,5 @@
     <string name="check_connection">please check your connection</string>
     <string name="time_out">time out… please try again</string>
     <string name="retry">Retry</string>
+    <string name="title">Movies Home</string>
 </resources>

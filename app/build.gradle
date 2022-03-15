@@ -41,6 +41,7 @@ dependencies {
     api project(":data")
     api project(":domain")
     api project(":entities")
+    api project(":homeScreen")
 
     implementation(Androidx.CORE_KTX)
     implementation(Androidx.APP_COMPAT)

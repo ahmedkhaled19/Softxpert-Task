@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/CleanArchTemplate.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/CleanArchTemplate.data.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/CleanArchTemplate.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/CleanArchTemplate.domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/CleanArchTemplate.entities.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/CleanArchTemplate.entities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/homeScreen/CleanArchTemplate.homeScreen.iml" filepath="$PROJECT_DIR$/.idea/modules/homeScreen/CleanArchTemplate.homeScreen.iml" />
     </modules>
   </component>
 </project>

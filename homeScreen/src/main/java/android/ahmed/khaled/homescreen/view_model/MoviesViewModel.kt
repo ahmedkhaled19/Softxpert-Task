@@ -108,12 +108,12 @@ class MoviesViewModel @Inject constructor(
     }
 
 
-    fun handleSelectedGenre(selectedPosition: Int): MutableList<Genre> {
+    fun handleSelectedGenre(selectedPosition: Int) {
         val genreLList = genreListLiveData.value!!
         genreLList[selectedGenrePosition].isSelected = false
         genreLList[selectedPosition].isSelected = true
         selectedGenrePosition = selectedPosition
         handleShowData(localMoviesList)
-        return genreLList
+        genreListLiveData.value = genreLList
     }
 }

@@ -35,6 +35,10 @@ class HomeActivity : BaseActivity() {
         binding.activityHomeBackBtn.isVisible = isShow
     }
 
+    fun showSearchButton(isShow: Boolean) {
+        binding.activityHomeSearchIcon.isVisible = isShow
+    }
+
     override fun getBaseViewModel(): BaseViewModel? = null
 
     override fun getActivityBinding(): View {

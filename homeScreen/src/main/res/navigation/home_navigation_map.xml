@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navigation_map"
-    app:startDestination="@id/moviesFragment">
+    app:startDestination="@id/moviesFragmentNav">
 
     <fragment
-        android:id="@+id/moviesFragment"
+        android:id="@+id/moviesFragmentNav"
         android:name="android.ahmed.khaled.homescreen.ui.MoviesFragment"
-        android:label="MoviesFragment" />
+        android:label="MoviesFragmentNav"
+        tools:layout="@layout/fragment_movies">
+        <action
+            android:id="@+id/action_moviesFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragmentNav" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragmentNav"
+        android:name="android.ahmed.khaled.homescreen.ui.MovieDetailFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movie"
+            app:argType="android.ahmed.khaled.entities.local.Movie" />
+    </fragment>
+
 </navigation>

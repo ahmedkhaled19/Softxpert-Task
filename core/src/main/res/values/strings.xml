@@ -6,4 +6,8 @@
     <string name="time_out">time out… please try again</string>
     <string name="retry">Retry</string>
     <string name="title">Movies Home</string>
+    <string name="movie_title">"Title : "</string>
+    <string name="release_date">"Release Date : "</string>
+    <string name="vote_rate">"Vote Rate : "</string>
+    <string name="overview">"Overview : "</string>
 </resources>

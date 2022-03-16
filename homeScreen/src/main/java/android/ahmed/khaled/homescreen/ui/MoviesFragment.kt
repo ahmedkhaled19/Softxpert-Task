@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,6 +41,7 @@ class MoviesFragment : BaseFragment() {
         setupObservers()
         (requireActivity() as HomeActivity).setHomeTitle(getString(R.string.title))
         (requireActivity() as HomeActivity).showBackButton(false)
+        (requireActivity() as HomeActivity).showSearchButton(true)
         return binding.root
     }
 
@@ -79,7 +81,13 @@ class MoviesFragment : BaseFragment() {
         initGenreAdapter()
         initMoviesAdapter()
         setupRecyclerView()
-        if (viewModel.page == 0) viewModel.loadData()
+
+        if (viewModel.page == 0) {
+            binding.fragmentMoviesGenresRecyclerView.isVisible = false
+            binding.fragmentMoviesRecyclerView.isVisible = false
+            binding.fragmentMoviesLoadingProgress.isVisible = true
+            viewModel.loadData()
+        }
     }
 
     private fun initGenreAdapter() {
@@ -88,8 +96,8 @@ class MoviesFragment : BaseFragment() {
         genreAdapter = GenreAdapter {
             if (viewModel.selectedGenrePosition != it) {
                 moviesAdapter.clear()
-                val updatedGenreList = viewModel.handleSelectedGenre(it)
-                genreAdapter.submitList(updatedGenreList)
+                genreAdapter.clear()
+                viewModel.handleSelectedGenre(it)
                 scrollRecyclerToPosition(it)
             }
         }
@@ -108,7 +116,9 @@ class MoviesFragment : BaseFragment() {
         if (this::moviesAdapter.isInitialized) return
 
         moviesAdapter = MoviesAdapter {
-            //TODO send movie object to movie detail
+            findNavController().navigate(
+                MoviesFragmentDirections.actionMoviesFragmentToMovieDetailFragment(it)
+            )
         }
     }
 

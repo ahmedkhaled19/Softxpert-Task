@@ -5,6 +5,7 @@ import android.ahmed.khaled.entities.local.Genre
 import android.ahmed.khaled.homescreen.R
 import android.ahmed.khaled.homescreen.databinding.ItemGenreListBinding
 import android.view.View
+import androidx.appcompat.content.res.AppCompatResources
 
 /**
  * Created by Ahmed Khaled on 15/03/2022.
@@ -20,7 +21,23 @@ class GenreAdapter(val onTypeSelected: ((position: Int) -> Unit)) :
 
     override fun bind(view: View, item: Genre, position: Int) {
         binding = ItemGenreListBinding.bind(view)
+
         binding.itemGenreListName.text = item.name
+
+        if (item.isSelected) {
+            binding.itemGenreListName.background =
+                AppCompatResources.getDrawable(
+                    view.context,
+                    android.ahmed.khaled.core.R.drawable.ic_rectangle_orange
+                )
+        } else {
+            binding.itemGenreListName.background =
+                AppCompatResources.getDrawable(
+                    view.context,
+                    android.ahmed.khaled.core.R.drawable.ic_rectangle_grey
+                )
+        }
+
         view.setOnClickListener {
             onTypeSelected(position)
         }

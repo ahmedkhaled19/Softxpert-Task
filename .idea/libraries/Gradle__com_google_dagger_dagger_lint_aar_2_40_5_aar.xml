@@ -2,9 +2,10 @@
   <library name="Gradle: com.google.dagger:dagger-lint-aar:2.40.5@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/110b2dad0c4604def1fdc126ff692aa6/transformed/dagger-lint-aar-2.40.5/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4795f60fbf9e279a35d59a7e49b44024/transformed/dagger-lint-aar-2.40.5/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4795f60fbf9e279a35d59a7e49b44024/transformed/dagger-lint-aar-2.40.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4795f60fbf9e279a35d59a7e49b44024/transformed/dagger-lint-aar-2.40.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/de2becc1301d124227c56f3c97d84323/transformed/dagger-lint-aar-2.40.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/de2becc1301d124227c56f3c97d84323/transformed/dagger-lint-aar-2.40.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/de2becc1301d124227c56f3c97d84323/transformed/dagger-lint-aar-2.40.5/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -15,7 +15,7 @@ data class RemoteMovies(var id: Long) {
     var backdrop_path: String? = ""
 
     @SerializedName("genre_ids")
-    var genre_ids: List<Int>? = null
+    var genre_ids: List<Long>? = null
 
     @SerializedName("original_language")
     var original_language: String? = ""

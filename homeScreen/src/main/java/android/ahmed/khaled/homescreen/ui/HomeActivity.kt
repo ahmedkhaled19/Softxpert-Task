@@ -31,8 +31,8 @@ class HomeActivity : BaseActivity() {
         binding.activityHomeTitleTv.text = title
     }
 
-    fun hideAndShowBackButton(isSHow: Boolean) {
-        binding.activityHomeBackBtn.isVisible = isSHow
+    fun showBackButton(isShow: Boolean) {
+        binding.activityHomeBackBtn.isVisible = isShow
     }
 
     override fun getBaseViewModel(): BaseViewModel? = null

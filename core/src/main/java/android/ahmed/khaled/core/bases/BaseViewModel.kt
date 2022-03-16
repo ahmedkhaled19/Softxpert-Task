@@ -24,13 +24,21 @@ open class BaseViewModel @Inject constructor() : ViewModel() {
         SingleLiveEvent<MessageWrapper>()
     }
 
+    val showMessageWithAction: SingleLiveEvent<MessageWrapper> by lazy {
+        SingleLiveEvent<MessageWrapper>()
+    }
+
     val moveToIntent: SingleLiveEvent<Class<*>> by lazy {
         SingleLiveEvent<Class<*>>()
     }
 
-    protected fun showMessageByStringId(stringId: Int) {
+    protected fun showMessageByStringId(stringId: Int, withAction: Boolean) {
         messageWrapper.messageId = stringId
-        showMessage.value = messageWrapper
+        if (withAction) {
+            showMessageWithAction.value = messageWrapper
+        } else {
+            showMessage.value = messageWrapper
+        }
     }
 
     protected fun showServerMessage(message: String) {

@@ -5,6 +5,7 @@ import android.ahmed.khaled.core.bases.BaseFragment
 import android.ahmed.khaled.core.bases.BaseViewModel
 import android.ahmed.khaled.core.bases.PaginationScrollListener
 import android.ahmed.khaled.core.utils.Constants.GRID_SPAN_COUNT
+import android.ahmed.khaled.core.utils.UiUtils
 import android.ahmed.khaled.homescreen.adapters.GenreAdapter
 import android.ahmed.khaled.homescreen.adapters.MoviesAdapter
 import android.ahmed.khaled.homescreen.databinding.FragmentMoviesBinding
@@ -38,11 +39,20 @@ class MoviesFragment : BaseFragment() {
         binding = FragmentMoviesBinding.inflate(layoutInflater)
         setupObservers()
         (requireActivity() as HomeActivity).setHomeTitle(getString(R.string.title))
+        (requireActivity() as HomeActivity).showBackButton(false)
         return binding.root
     }
 
     private fun setupObservers() {
         with(viewModel) {
+            showMessageWithAction.observe(viewLifecycleOwner) {
+                UiUtils.showSnackBarWithAction(
+                    getActivityBinding(), it.getMessage(requireContext())
+                ) {
+                    viewModel.loadData()
+                }
+            }
+
             showLoadingProgressBar.observe(viewLifecycleOwner) {
                 binding.fragmentMoviesLoadingProgress.isVisible = it
             }
@@ -52,10 +62,13 @@ class MoviesFragment : BaseFragment() {
             }
 
             genreListLiveData.observe(viewLifecycleOwner) {
+                binding.fragmentMoviesGenresRecyclerView.isVisible = true
+                genreAdapter.addToList(it)
             }
 
             moviesListLiveData.observe(viewLifecycleOwner) {
-
+                binding.fragmentMoviesRecyclerView.isVisible = true
+                moviesAdapter.addToList(it)
             }
         }
 
@@ -72,10 +85,23 @@ class MoviesFragment : BaseFragment() {
     private fun initGenreAdapter() {
         if (this::genreAdapter.isInitialized) return
 
-        genreAdapter = GenreAdapter { selectedPosition ->
-            viewModel.handleSelectedGenre(selectedPosition)
+        genreAdapter = GenreAdapter {
+            if (viewModel.selectedGenrePosition != it) {
+                moviesAdapter.clear()
+                val updatedGenreList = viewModel.handleSelectedGenre(it)
+                genreAdapter.submitList(updatedGenreList)
+                scrollRecyclerToPosition(it)
+            }
         }
+    }
 
+    private fun scrollRecyclerToPosition(position: Int) {
+        binding.fragmentMoviesGenresRecyclerView.post {
+            binding.fragmentMoviesGenresRecyclerView.smoothScrollToPosition(position)
+        }
+        binding.fragmentMoviesRecyclerView.post {
+            binding.fragmentMoviesRecyclerView.smoothScrollToPosition(0)
+        }
     }
 
     private fun initMoviesAdapter() {

@@ -8,6 +8,7 @@
         android:id="@+id/fragment_movies_genres_recycler_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +20,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_movies_loading_progress"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_movies_load_more_progress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragment_movies_genres_recycler_view" />

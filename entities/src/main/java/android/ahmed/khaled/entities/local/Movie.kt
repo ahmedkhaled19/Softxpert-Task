@@ -1,5 +1,7 @@
 package android.ahmed.khaled.entities.local
 
+import java.util.*
+
 
 data class Movie(
     var externalId: Long = 0,
@@ -7,6 +9,6 @@ data class Movie(
     var posterPath: String = "",
     var overview: String = "",
     var voteAverage: Double = 0.0,
-    var genresIDs: MutableList<Int> = ArrayList(),
+    var genresIDs: MutableList<Long> = ArrayList(),
     var releaseDate: String = ""
 )

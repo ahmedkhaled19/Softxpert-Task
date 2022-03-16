@@ -48,7 +48,7 @@ abstract class BaseRecyclerViewAdapter<T>(
     }
 
     fun clear() {
-        submitList(emptyList())
+        submitList(null)
     }
 
     class BaseViewHolder(view: View) : RecyclerView.ViewHolder(view)

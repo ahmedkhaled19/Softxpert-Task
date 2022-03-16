@@ -17,7 +17,7 @@ class MoviesRepo @Inject constructor(
         return moviesEndPoints.getGenresMovie()
     }
 
-    suspend fun getTopRatedMovies(): MoviesResponse {
-        return moviesEndPoints.getTopRatedMovies()
+    suspend fun getTopRatedMovies(PageNumber : Int): MoviesResponse {
+        return moviesEndPoints.getTopRatedMovies(PageNumber)
     }
 }

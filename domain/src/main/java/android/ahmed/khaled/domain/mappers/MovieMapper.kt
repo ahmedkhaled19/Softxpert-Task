@@ -16,12 +16,12 @@ class MovieMapper @Inject constructor() : BaseMapper<RemoteMovies?, Movie> {
         return from?.let {
             Movie(
                 it.id,
-                it.title!!,
+                it.title ?: "",
                 Constants.IMAGE_BASE_URL + it.poster_path,
-                it.overview!!,
-                it.vote_average!!,
+                it.overview ?: "",
+                it.vote_average ?: 0.0,
                 it.genre_ids!!.toMutableList(),
-                it.release_date!!
+                it.release_date ?: ""
             )
         } ?: Movie()
     }

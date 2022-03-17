@@ -3,6 +3,7 @@ package android.ahmed.khaled.homescreen.ui
 import android.ahmed.khaled.core.bases.BaseActivity
 import android.ahmed.khaled.core.bases.BaseViewModel
 import android.ahmed.khaled.homescreen.databinding.ActivityHomeBinding
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
@@ -25,6 +26,11 @@ class HomeActivity : BaseActivity() {
         binding.activityHomeBackBtn.setOnClickListener {
             onBackPressed()
         }
+
+        binding.activityHomeSearchIcon.setOnClickListener {
+            startActivity(Intent(this, SearchActivity::class.java))
+
+        }
     }
 
     fun setHomeTitle(title: String) {
@@ -41,7 +47,5 @@ class HomeActivity : BaseActivity() {
 
     override fun getBaseViewModel(): BaseViewModel? = null
 
-    override fun getActivityBinding(): View {
-        TODO("Not yet implemented")
-    }
+    override fun getActivityBinding(): View = binding.root
 }

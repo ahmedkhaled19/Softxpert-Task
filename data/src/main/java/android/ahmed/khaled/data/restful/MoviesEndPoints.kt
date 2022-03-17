@@ -13,4 +13,10 @@ interface MoviesEndPoints {
     @GET("movie/top_rated")
     suspend fun getTopRatedMovies(@Query("page") page: Int): MoviesResponse
 
+    @GET("search/movie")
+    suspend fun searchForMovies(
+        @Query("query") query: String,
+        @Query("page") page: Int
+    ): MoviesResponse
+
 }

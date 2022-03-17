@@ -47,4 +47,8 @@ dependencies {
     //Coroutines
     implementation(Coroutines.COROUTINES_ANDROID)
 
+    //Testing
+    testImplementation(Testing.JUNIT_TEST)
+    testImplementation(Testing.GOOGLE_TRUTH)
+
 }

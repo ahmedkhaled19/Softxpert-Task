@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2462962962962963" />
         <entry key="core/src/main/res/drawable/ic_arrow_back.xml" value="0.1295" />
         <entry key="core/src/main/res/drawable/ic_rectangle_grey.xml" value="0.1295" />
         <entry key="core/src/main/res/drawable/ic_rectangle_orange.xml" value="0.1295" />
+        <entry key="core/src/main/res/drawable/ic_rounded_corners.xml" value="0.133" />
+        <entry key="core/src/main/res/drawable/ic_search.xml" value="0.1" />
+        <entry key="core/src/main/res/drawable/ic_search_black.xml" value="0.1" />
         <entry key="homeScreen/src/main/res/layout/activity_home.xml" value="0.24479166666666666" />
+        <entry key="homeScreen/src/main/res/layout/activity_search.xml" value="0.24583333333333332" />
         <entry key="homeScreen/src/main/res/layout/fragment_movie_detail.xml" value="0.24479166666666666" />
         <entry key="homeScreen/src/main/res/layout/fragment_movies.xml" value="0.24479166666666666" />
+        <entry key="homeScreen/src/main/res/layout/fragment_search.xml" value="0.24583333333333332" />
         <entry key="homeScreen/src/main/res/layout/item_genre_list.xml" value="0.24479166666666666" />
         <entry key="homeScreen/src/main/res/layout/item_movie_list.xml" value="0.24479166666666666" />
       </map>

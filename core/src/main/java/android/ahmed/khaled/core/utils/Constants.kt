@@ -7,4 +7,7 @@ object Constants {
 
     const val GRID_SPAN_COUNT = 2
     const val GENRE_BASE_ID = 0
+
+    const val HOME_DESTINATION = 1
+    const val SEARCH_DESTINATION = 2
 }

@@ -5,6 +5,7 @@ import android.ahmed.khaled.core.bases.BaseFragment
 import android.ahmed.khaled.core.bases.BaseViewModel
 import android.ahmed.khaled.core.bases.PaginationScrollListener
 import android.ahmed.khaled.core.utils.Constants.GRID_SPAN_COUNT
+import android.ahmed.khaled.core.utils.Constants.HOME_DESTINATION
 import android.ahmed.khaled.core.utils.UiUtils
 import android.ahmed.khaled.homescreen.adapters.GenreAdapter
 import android.ahmed.khaled.homescreen.adapters.MoviesAdapter
@@ -117,7 +118,10 @@ class MoviesFragment : BaseFragment() {
 
         moviesAdapter = MoviesAdapter {
             findNavController().navigate(
-                MoviesFragmentDirections.actionMoviesFragmentToMovieDetailFragment(it)
+                MoviesFragmentDirections.actionMoviesFragmentToMovieDetailFragment(
+                    it,
+                    HOME_DESTINATION
+                )
             )
         }
     }

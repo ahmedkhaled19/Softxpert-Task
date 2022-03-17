@@ -1,6 +1,7 @@
 package android.ahmed.khaled.data.repository
 
 import android.ahmed.khaled.data.restful.MoviesEndPoints
+import android.ahmed.khaled.entities.remote.SearchWrapper
 import android.ahmed.khaled.entities.responses.GenresResponse
 import android.ahmed.khaled.entities.responses.MoviesResponse
 import javax.inject.Inject
@@ -17,7 +18,14 @@ class MoviesRepo @Inject constructor(
         return moviesEndPoints.getGenresMovie()
     }
 
-    suspend fun getTopRatedMovies(PageNumber : Int): MoviesResponse {
+    suspend fun getTopRatedMovies(PageNumber: Int): MoviesResponse {
         return moviesEndPoints.getTopRatedMovies(PageNumber)
+    }
+
+    suspend fun searchForMovie(searchWrapper: SearchWrapper): MoviesResponse {
+        return moviesEndPoints.searchForMovies(
+            query = searchWrapper.searchQuery,
+            page = searchWrapper.page
+        )
     }
 }

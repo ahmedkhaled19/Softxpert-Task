@@ -10,4 +10,5 @@
     <string name="release_date">"Release Date : "</string>
     <string name="vote_rate">"Vote Rate : "</string>
     <string name="overview">"Overview : "</string>
+    <string name="search_query">search</string>
 </resources>

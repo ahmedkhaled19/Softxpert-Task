@@ -2,6 +2,7 @@ package android.ahmed.khaled.homescreen.ui
 
 import android.ahmed.khaled.core.bases.BaseFragment
 import android.ahmed.khaled.core.bases.BaseViewModel
+import android.ahmed.khaled.core.utils.Constants
 import android.ahmed.khaled.entities.local.Movie
 import android.ahmed.khaled.homescreen.databinding.FragmentMovieDetailBinding
 import android.os.Bundle
@@ -33,10 +34,24 @@ class MovieDetailFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         args.apply {
-            setData(this.movie)
-            (requireActivity() as HomeActivity).setHomeTitle(movie.movieTitle)
-            (requireActivity() as HomeActivity).showBackButton(true)
-            (requireActivity() as HomeActivity).showSearchButton(false)
+            setData(movie)
+            handleParentView(destination, movie.movieTitle)
+        }
+    }
+
+    private fun handleParentView(destination: Int, movieTitle: String) {
+        when (destination) {
+            Constants.HOME_DESTINATION -> {
+                (requireActivity() as HomeActivity).setHomeTitle(movieTitle)
+                (requireActivity() as HomeActivity).showBackButton(true)
+                (requireActivity() as HomeActivity).showSearchButton(false)
+            }
+
+            Constants.SEARCH_DESTINATION -> {
+                (requireActivity() as SearchActivity).setHomeTitle(movieTitle)
+                (requireActivity() as SearchActivity).showTitleView(true)
+                (requireActivity() as SearchActivity).showSearchView(false)
+            }
         }
     }
 
